@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="filecon.app/Contents/MacOS/filecon">
+      <BCSymbolMapName>filecon.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>filecon.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/ahmetalikasranoglu/Desktop/concom/4.filecon IDE/filecon/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>filecon.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/ahmetalikasranoglu/Desktop/concom/4.filecon IDE/filecon</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

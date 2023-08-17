@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:filecon="clr-namespace:filecon" 
+             x:Class="filecon.MainPage"
+             Title="Filecon IDE">
+
+
+
+    
+
+
+        <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="ADD"></ToolbarItem>
+        <ToolbarItem Text="DELETE"></ToolbarItem>
+
+
+    </ContentPage.ToolbarItems>
+
+    
+                
+             
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Create Job "/>
+          
+           
+            <MenuFlyoutItem Text="Exit" />
+
+        </MenuBarItem>
+        
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Exit Full Screen" />
+        </MenuBarItem>
+
+        <MenuBarItem Text="Tools">
+            <MenuFlyoutSubItem Text="Categorize">
+                <MenuFlyoutItem Text="Manage Categories" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Options" />
+        </MenuBarItem>
+
+
+    </ContentPage.MenuBarItems>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Row="0"
+
+            >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+
+        <TableView Intent="Menu"
+                   Grid.Row="0"
+                   
+                   >
+            <TableRoot>
+                <TableSection  Title="Folders">
+                    <TextCell Text="Project_file"/>
+                    <TextCell Text="main.cpp"/>
+                    <TextCell Text="input.txt"/>
+                    <TextCell Text="output.txt"/>
+
+
+                              
+                </TableSection>
+                <TableSection Title=".vscode">
+                    <TextCell Text="launch.json"/>
+                    <TextCell Text="tasks.json"/>
+                    <TextCell Text="settings.json"/>
+                </TableSection>
+            </TableRoot>
+      
+        </TableView>
+
+            <Grid
+               
+                Grid.Column="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+                    
+            
+                       
+        
+        <VerticalStackLayout Grid.Row="0" Spacing="0" Padding="0">
+
+            <ScrollView Grid.Row="0"  
+                Orientation="Vertical" VerticalScrollBarVisibility="Default" MinimumHeightRequest="1000" MinimumWidthRequest="1000" MaximumHeightRequest="1000" MaximumWidthRequest="1000">
+                <Editor Grid.Row="0" x:Name="CodeEditor"
+                    VerticalTextAlignment="Start"
+					AutoSize="TextChanges" />
+            </ScrollView>
+                        </VerticalStackLayout>
+
+                <VerticalStackLayout Grid.Row="1" Spacing="0" Padding="0">
+ <ScrollView Grid.Row="1"  
+                Orientation="Vertical" VerticalScrollBarVisibility="Default" MinimumHeightRequest="150" MinimumWidthRequest="150" MaximumHeightRequest="150" MaximumWidthRequest="150">
+                   <Editor Grid.Row="1" Background="gray" TextColor="white" x:Name="CodeTerminal"
+                    VerticalTextAlignment="Start"
+					AutoSize="TextChanges" />
+            </ScrollView>
+        
+           </VerticalStackLayout>
+
+                  </Grid>
+
+        <Border
+        Grid.Column="2"
+        Stroke="lightgray"
+        StrokeThickness="0.01"
+        Background="lightgray"
+        Padding="2,2">
+   
+        <ListView
+                  Grid.Column="2"
+                  x:Name="listRows"
+                  RowHeight="29">
+            <ListView.Header>
+                <StackLayout BackgroundColor="LightGray">
+                    <Label Margin="10,0,0,0"
+                           Text="Classes"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                </StackLayout>
+
+
+
+            </ListView.Header>
+
+            <ListView.ItemTemplate>
+                 <DataTemplate>
+            <ViewCell>
+                <StackLayout Orientation="Horizontal">
+                     <Label Text="{Binding Type}" FontAttributes="Bold" />
+                     <Label Text="{Binding Name}" />
+                     <Label Text="{Binding Signature}" FontAttributes="Italic" Margin="10,0,0,0" />
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+
+            </ListView.ItemTemplate>
+            
+        </ListView>
+            </Border>
+
+            
+
+            </Grid>
+
+            
+        <Grid
+            Grid.Row="1"
+            BackgroundColor="white" >
+         <Border
+        Grid.Row="1"
+        
+        Stroke="lightgray"
+        StrokeThickness="2"
+        Padding="2,2"/>
+
+        <ProgressBar
+             WidthRequest="999"
+             Grid.Row="1"
+             Progress="0.8"
+             ProgressColor="LightGreen" />
+
+        <Label
+            Margin="5,5"
+            Grid.Row="1"
+            Text="Process succeed!"
+            TextColor="Green"/>
+
+            </Grid>
+        
+
+    </Grid>
+    
+    
+
+
+</ContentPage>

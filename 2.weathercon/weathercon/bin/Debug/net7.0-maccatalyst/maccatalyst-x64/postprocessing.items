@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="weathercon.app/Contents/MacOS/weathercon">
+      <BCSymbolMapName>weathercon.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>weathercon.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/ahmetalikasranoglu/Desktop/concom/2.weathercon/weathercon/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>weathercon.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/ahmetalikasranoglu/Desktop/concom/2.weathercon/weathercon</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

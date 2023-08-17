@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:mailcon="clr-namespace:mailcon" 
+             x:Class="mailcon.MainPage"
+             Title="Emailcon"
+             BackgroundColor="White">
+                
+             
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutSubItem Text="New">
+                <MenuFlyoutItem Text="Email"
+                            Command="{Binding NewEmailCommand}" />
+                <MenuFlyoutItem Text="Event"
+                            Command="{Binding NewEventCommand}" />
+          
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Exit" />
+
+        </MenuBarItem>
+        <MenuBarItem Text="Emails">
+            <MenuFlyoutItem Text="Select All" />
+  
+                  
+            <MenuFlyoutItem Text="Delete"
+                            Command="{Binding DeleteCommand}" />
+            <MenuFlyoutItem Text="Permanently Delete"
+                            Command="{Binding DeleteCommand}" />
+            <MenuFlyoutItem Text="Delete All"
+                            Command="{Binding DeleteCommand}" />                            
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Previous"
+                            Command="{Binding PreviousCommand}" />
+            <MenuFlyoutItem Text="Next"
+                            Command="{Binding NextCommand}" />
+          
+            <MenuFlyoutSubItem Text="Sort By">
+                <MenuFlyoutItem Text="Date">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Size">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Importance">
+                </MenuFlyoutItem>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSubItem Text="Filter By">
+                <MenuFlyoutItem Text="Unread">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="To Me">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Mentions Me">
+                </MenuFlyoutItem>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Open Sidebar" />
+            <MenuFlyoutItem Text="Open Task Pane" />
+            <MenuFlyoutItem Text="Exit Full Screen" />
+        </MenuBarItem>
+        <MenuBarItem Text="Tools">
+            <MenuFlyoutItem Text="Reply"/>
+            <MenuFlyoutItem Text="Reply All"/>
+            <MenuFlyoutItem Text="Forward" />
+            <MenuFlyoutItem Text="Forward as Attachment" />
+            
+            <MenuFlyoutItem Text="Toggle Unread" />
+            <MenuFlyoutItem Text="Mark as Read"/>
+            <MenuFlyoutItem Text="Mark All as Read"/>
+            
+            <MenuFlyoutItem Text="Find Emails from this Sender"/>
+            <MenuFlyoutItem Text="Add Sender to Contacts"/>
+            
+            <MenuFlyoutSubItem Text="Categorize">
+                <MenuFlyoutItem Text="Manage Categories" />
+            </MenuFlyoutSubItem>
+            
+            <MenuFlyoutSubItem Text="Report">
+                <MenuFlyoutItem Text="Report Junk" />
+                <MenuFlyoutItem Text="Report Phishing" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Block" />
+            <MenuFlyoutItem Text="Options" />
+        </MenuBarItem>
+
+
+    </ContentPage.MenuBarItems>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="HELP"/>
+        <ToolbarItem Text="REPORT"/>
+
+
+    </ContentPage.ToolbarItems>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />  
+        </Grid.ColumnDefinitions>
+
+        <HorizontalStackLayout
+                         Grid.Row="1"
+                         Grid.Column="0"
+                         HorizontalOptions="Center">
+                <Button
+                        Margin="5,5,5,5"
+                        Text="New Mail"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Purple"/>
+                <Button
+                        Margin="5,5,5,5"
+                        Text="Delete"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Purple"/>
+                <Button
+                        Margin="5,5,5,5"
+                        Text="Report"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Purple"/>
+                <Button
+                        Margin="5,5,5,5"
+                        Text="Flag"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Purple"/>
+                <Button
+                        Margin="5,5,5,5"
+                        Text="Mark Unread"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="Purple"/>
+            </HorizontalStackLayout>
+
+       
+
+        <Grid Grid.Row="3"
+              Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <TableView Intent="Menu"
+                       Grid.Row="0"
+                       Grid.Column="0">
+                <TableRoot>
+                    <TableSection Title="ahmetalikasranoglu@gmail.com">
+                        <TextCell Text="Inbox"/>
+                        <TextCell Text="Sent"/>
+                        <TextCell Text="Drafts"/>
+                        <TextCell Text="Spam"/>
+                        <TextCell Text="Trash"/>
+                              
+                    </TableSection>
+                    <TableSection Title="ahmet.kasranoglu@student.um.si">
+                        <TextCell Text="Inbox"/>
+                        <TextCell Text="Drafts"/>
+                        <TextCell Text="Sent"/>
+                        <TextCell Text="Spam"/>
+                        <TextCell Text="Trash"/>
+                    </TableSection>
+                </TableRoot>
+      
+            </TableView>
+        
+            <ListView Grid.Row="0"
+                      Grid.Column="1"
+                      x:Name="listMails"
+                      RowHeight="80">
+                <ListView.Header>
+                    <StackLayout BackgroundColor="LightSalmon">
+                        <Label Margin="10,0,0,0"
+                               Text="All Mails"
+                               FontSize="20"
+                               FontAttributes="Bold" />
+                    </StackLayout>
+
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}"
+                                  Detail="{Binding Content}">
+                        </TextCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            
+
+            </ListView>
+            <Grid Grid.Row="0"
+                  Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="From: Ahmet Suat Bal (suat.bal@student.um.si)"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       BackgroundColor="AliceBlue">
+                </Label>
+                <Label Text="To: Me (ahmetkasranoglu@student.um.si)"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       BackgroundColor="LightGray">
+
+                </Label>
+                <Label Text="About Exam date"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       FontSize="Title"
+                       BackgroundColor="AliceBlue">
+                </Label>
+                <Label Text="Hi Ahmet Ali, do you know when is the assignment?"
+                       Grid.Row="4"
+                       Grid.Column="0"
+                       FontSize="Body"
+                       BackgroundColor="AliceBlue">
+                </Label>
+            </Grid>
+        </Grid>
+
+        <SearchBar Grid.Row="0"
+                   Grid.Column="0"
+                   Placeholder="Search.."
+                   BackgroundColor="White">
+        </SearchBar>
+        
+    </Grid>
+</ContentPage>

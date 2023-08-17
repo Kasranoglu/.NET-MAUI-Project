@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{D29B551D-9261-4EE5-BE95-45F5EE5F6C2F}|Default">
+  <MonoDevelop.Ide.ItemProperties.filecon PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="filecon/MainPage.xaml">
+    <Files>
+      <File FileName="filecon/MainPage.xaml" Line="8" Column="32" />
+      <File FileName="filecon/MainPage.xaml.cs" />
+      <File FileName="filecon/AppShell.xaml" />
+      <File FileName="filecon/MauiProgram.cs" />
+      <File FileName="filecon/App.xaml" />
+      <File FileName="filecon/Platforms/Tizen/Main.cs" />
+      <File FileName="filecon/Platforms/Android/MainActivity.cs" />
+      <File FileName="filecon/Platforms/MacCatalyst/AppDelegate.cs" />
+      <File FileName="filecon/App.xaml.cs" />
+      <File FileName="filecon/Platforms/MacCatalyst/Program.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

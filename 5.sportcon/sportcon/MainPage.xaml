@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:hciexercise5="clr-namespace:sportcon" 
+             x:Class="sportcon.MainPage"
+             Title="sportscon">
+                
+             
+    <ContentPage.MenuBarItems>
+
+         <MenuBarItem Text="Sports Log">
+            <MenuFlyoutSubItem Text="Add">
+                <MenuFlyoutItem Text="Activity"
+                             />
+                <MenuFlyoutItem Text="Event"
+                             />
+          
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Exit" />
+
+        </MenuBarItem>
+        <MenuBarItem Text="Dashboard">
+            <MenuFlyoutSubItem Text="New">
+                <MenuFlyoutItem Text="Dashboard"
+                            />
+                <MenuFlyoutItem Text="Profile"
+                            />
+          
+            </MenuFlyoutSubItem>
+
+        </MenuBarItem>
+        <MenuBarItem Text="Activities">
+            <MenuFlyoutItem Text="Select All" />
+  
+                  
+            <MenuFlyoutItem Text="Delete"
+                            />
+            <MenuFlyoutItem Text="Add to Current Dashboard/Event"
+                            />
+
+            <MenuFlyoutItem Text="Edit Activity"
+                            />                            
+        </MenuBarItem>
+        <MenuBarItem Text="View">
+            <MenuFlyoutItem Text="Previous"
+                            />
+            <MenuFlyoutItem Text="Next"
+                            />
+          
+            <MenuFlyoutSubItem Text="Sort By">
+                <MenuFlyoutItem Text="Date">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Duration">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Importance">
+                </MenuFlyoutItem>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSubItem Text="Filter By">
+                <MenuFlyoutItem Text="Activity Type">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Complete">
+                </MenuFlyoutItem>
+                <MenuFlyoutItem Text="Planned">
+                </MenuFlyoutItem>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Open Sidebar" />
+            <MenuFlyoutItem Text="Open Task Pane" />
+            <MenuFlyoutItem Text="Exit Full Screen" />
+        </MenuBarItem>
+        <MenuBarItem Text="Start">
+            <MenuFlyoutItem Text="New Activity"/>
+            <MenuFlyoutItem Text="Paused Activity"/>
+            <MenuFlyoutItem Text="" />
+            
+            <MenuFlyoutItem Text="Toggle Incomplete" />
+            <MenuFlyoutItem Text="Find Activities Near Current Location"/>
+            <MenuFlyoutItem Text="Add New Activity"/>
+            
+            <MenuFlyoutSubItem Text="Categorize">
+                <MenuFlyoutItem Text="Manage Categories" />
+            </MenuFlyoutSubItem>
+            
+            <MenuFlyoutSubItem Text="Update">
+                <MenuFlyoutItem Text="Geolocation" />
+                <MenuFlyoutItem Text="Health Data" />
+            </MenuFlyoutSubItem>
+            <MenuFlyoutItem Text="Delete" />
+            <MenuFlyoutItem Text="Options" />
+        </MenuBarItem>
+
+
+    </ContentPage.MenuBarItems>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="13*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+
+        <SearchBar Grid.Row="0"
+            Grid.Column="1"
+            Placeholder="Search.."
+            BackgroundColor="White">
+        </SearchBar>
+
+        <Label Text="Search Activity:"
+            Grid.Row="0"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            Grid.Column="0"
+            FontSize="Body"
+            BackgroundColor="LightGrey"
+            TextColor="Black">
+        </Label>
+
+        <TableView Intent="Menu"
+                   Grid.Row="2"
+                   Grid.Column="0">
+            <TableRoot>
+                <TableSection Title="biker">
+                    <TextCell Text="Nikepro+"/>
+                    <TextCell Text="Route"/>
+                    <TextCell Text="Mybike"/>
+                    <TextCell Text="Timer"/>
+                    <TextCell Text="Challanges"/>
+                </TableSection>
+                <TableSection Title="ME">
+                    <TextCell Text="Records"/>
+                    <TextCell Text="Ranking"/>
+                    <TextCell Text="Goals"/>
+                    <TextCell Text="Schedule"/>
+                    <TextCell Text="Energy Mode"/>
+                    <TextCell Text="Other Sports Mode"/>
+                              
+                </TableSection>
+
+            </TableRoot>
+      
+        </TableView>
+        
+        <ListView Grid.Row="1"
+                  Grid.Column="1"
+                  x:Name="listActivities"
+                  RowHeight="80">
+            <ListView.Header>
+                <StackLayout BackgroundColor="LightSalmon">
+                    <Label Margin="10,0,0,0"
+                           Text="My Activities"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                </StackLayout>
+
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Content}">
+                    </TextCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+        <Grid Grid.Row="0"
+              Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Current Activity"
+                   Grid.Row="0"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Grid.Column="3"
+                   FontSize="Title"
+                   BackgroundColor="OrangeRed"
+                   TextColor="Black">
+            </Label>
+
+            <Image Grid.Row="0"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            HeightRequest="658"
+            WidthRequest="888"
+            Source="istanbul.jpg"
+            Grid.Column="3"
+            />
+
+        </Grid>
+    
+        
+    </Grid>
+    </ContentPage>
